@@ -1,0 +1,125 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 Helvetica;\f2\froman\fcharset0 Times-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red24\green25\blue27;\red0\green0\blue0;\red46\green49\blue51;
+}
+{\*\expandedcolortbl;;\cssrgb\c12549\c12941\c14118;\cssrgb\c0\c0\c0;\cssrgb\c23529\c25098\c26275;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28280\viewh14960\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs64 \cf2 \expnd0\expndtw0\kerning0
+#Atividade 05 - Cria\'e7\'e3o de Scenarios Outlines
+\f1\fs32 \cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf4 # Assim como vimos na aula de hoje, solicito a cria\'e7\'e3o de Scenarios~e Scenarios Outline para as quest\'f5es a seguir.\uc0\u8232 \u8232 # 	Instru\'e7\'f5es:\'a0
+\f1 \AppleTypeServices \cf3 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa213\partightenfactor0
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}# 	\'95	\expnd0\expndtw0\kerning0
+Esta atividade \'e9 individual, cada aluno dever\'e1 enviar sua resposta
+\f1 \AppleTypeServices \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa213\partightenfactor0
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \kerning1\expnd0\expndtw0 {\listtext	\'95	}#	      \'95	\expnd0\expndtw0\kerning0
+Dever\'e1 ser enviado um arquivo .txt \'fanico com todos os cen\'e1rios
+\f1 \AppleTypeServices \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \kerning1\expnd0\expndtw0 {\listtext	\'95	}#	      \'95	\expnd0\expndtw0\kerning0
+Quest\'e3o 1 a 3 -> Scenario Outline
+\f1 \AppleTypeServices \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \kerning1\expnd0\expndtw0 {\listtext	\'95	}#	      \'95	\expnd0\expndtw0\kerning0
+Quest\'e3o 4 e 5 -> Scenario normal (gherkin)\
+\pard\tx720\pardeftab720\sa213\partightenfactor0
+
+\f1 \AppleTypeServices \cf4 \
+\pard\pardeftab720\sl368\partightenfactor0
+
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf4 # 1 -
+\f2\b \AppleTypeServices\AppleTypeServicesF65539 \'a0[Valor Limite]\'a0
+\f0\b0 \AppleTypeServices\AppleTypeServicesF65539 \'a0Um campo de formul\'e1rio aceita sal\'e1rios entre R$ 1.000 e R$ 10.000. \
+# Crie casos de teste considerando os valores limite inferiores e superiores, utilizando Scenario Outline em Gherkin.\
+\
+Scenario outline: Valida\'e7\'e3o de sal\'e1rios com an\'e1lise de valor limite\
+	Given que o usu\'e1rio informa o sal\'e1rio <salario>\
+	When o sistema validar o campo\
+	Then o sistema deve retornar <resultado>\
+\
+	Examples:\
+	|   idade    |  resultado    |\
+	\cf4 |   999       |  \cf4 \'93i\cf4 nvalido\'94  |\
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 	|   1000     |  \'93valido\'94     |\
+	|   1001     |  \'93valido\'94     |\
+	|   9999     |  \'93valido\'94     |\
+	|   10000   |  \'93valido\'94     |\
+	|   10001   |  \'93invalido\'94  |\
+	\
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 \
+# 2 -\'a0
+\f2\b \AppleTypeServices\AppleTypeServicesF65539 [Particionamento de Equival\'eancia]
+\f0\b0 \AppleTypeServices\AppleTypeServicesF65539 \'a0 Um sistema de inscri\'e7\'e3o aceita candidatos com idades entre 18 e 60 anos. \
+#Identifique pelo menos tr\'eas parti\'e7\'f5es de equival\'eancia (v\'e1lida, abaixo do m\'ednimo, acima do m\'e1ximo) e escreva casos de teste para cada uma. \
+#Use o formato Scenario Outline.\
+# p1 --> entre 18 e 60\
+# p2 --> menor que 18\
+# p3 --> maior que 60\
+\
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 Scenario outline: Valida\'e7\'e3o de idade com particionamento de equivalencia\
+	Given que o usu\'e1rio informa a idade <idade>\
+	When o sistema validar o campo\
+	Then o sistema deve retornar <resultado>\
+\
+	Examples:\
+	|  idade |  resultado   |\
+	|  25      |  \'93valido\'94    |\
+	|  -1      |  \'93invalido\'94  |\
+	|  61     |  \'93invalido\'94  |\
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 \
+\
+# 3 -\'a0
+\f2\b \AppleTypeServices\AppleTypeServicesF65539 [Transi\'e7\'e3o de estados]
+\f0\b0 \AppleTypeServices\AppleTypeServicesF65539 \'a0 Um app de fidelidade classifica clientes com base em pontos acumulados: \
+# 0\'9699: Bronze, 100\'96499: Prata, 500+: Ouro. \
+# Crie um cen\'e1rio de transi\'e7\'e3o de estados, onde um cliente come\'e7a com 90 pontos, \
+# faz compras sucessivas e muda de categoria. \
+# Modele os testes em Gherkin.\
+# p1 \cf4 0 - 99 ->  Bronze\
+# p2 100 - 499 -> Prata\
+# p3 500+ -> Ouro\cf4 \
+\
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 Scenario outline: Verifica\'e7\'e3o de classifica\'e7\'e3o por pontos (Transi\'e7\'e3o de Estado)\
+	Given que o cliente possui 90 pontos <pontos_iniciais>\
+	And est\'e1 classificado como \'93<classificacao_inicial>\'94\
+	When o cliente realiza uma compra que concede 25 pontos <pontos_adquiridos>\
+	Then ele deve ter pontos <pontos_acumulados>\
+	And sua classifica\'e7\'e3o deve mudar para \'93<classificacao_final>\'94\
+\
+	Examples:\
+	| pontos_iniciais | classificacao_inicial  | pontos_adquiridos | pontos_acumulados | classificacao_final |\
+	| 90     		| Bronze			| 25			      | 115			    | Prata			 |\
+	| 115     		| Prata			| 200			      | 315			    | Prata			 |\cf4 \
+\cf4 	| 315     		| Prata			| 250			      | 565			    | Ouro			 |\
+\cf4 \
+\pard\pardeftab720\sl368\partightenfactor0
+\cf4 \
+4 -\'a0\'a0
+\f2\b \AppleTypeServices\AppleTypeServicesF65539 [Heur\'edsticas de Nielsen]
+\f0\b0 \AppleTypeServices\AppleTypeServicesF65539 \'a0Um sistema de upload de arquivos deve informar visualmente ao usu\'e1rio quando um upload est\'e1 em andamento, conclu\'eddo ou falhou. Crie um caso de teste validando a aplica\'e7\'e3o da heur\'edstica de visibilidade do status do sistema durante o upload de arquivos grandes (>100MB).\
+\
+\
+5 -\'a0
+\f2\b \AppleTypeServices\AppleTypeServicesF65539 \'a0[Testing Tours]
+\f0\b0 \AppleTypeServices\AppleTypeServicesF65539 \'a0Situa\'e7\'e3o:\'a0\
+\
+Um sistema de atendimento via chat online \'e9 utilizado por operadores que ficam logados das 08h \'e0s 18h, atendendo m\'faltiplos clientes durante o expediente. Crie um caso de teste baseado na heris
+\fs24 \AppleTypeServices \cf3  }
